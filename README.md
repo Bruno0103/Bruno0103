@@ -22,19 +22,13 @@ Estudo **Engenharia de Computação na UFU** (3º período), mas boa parte do qu
 Me interesso pelo ponto onde as camadas se encontram: um **ESP32** conversando com um **app Android**, um **braço SCARA** desenhando com caneta, um **display** recebendo bitmap pixel a pixel. Gosto de projeto que se mexe, acende ou desenha.
 
 ```cpp
-// bruno.cpp — cinemática inversa de um braço 2R (SCARA), do jeito que eu uso na bancada
+// bruno.cpp
 struct Maker {
   const char* nome    = "Bruno";
   const char* foco    = "Software + Sistemas Embarcados";
   const char* modo    = "autodidata, aprendendo construindo";
   const char* ocupado = "robótica, cinemática e PCBs no KiCad";
 };
-
-void cinematicaInversa(float x, float y, float L1, float L2, float &th1, float &th2) {
-  float c2 = (x*x + y*y - L1*L1 - L2*L2) / (2.0f * L1 * L2);
-  th2 = acos(constrain(c2, -1.0f, 1.0f));
-  th1 = atan2(y, x) - atan2(L2 * sin(th2), L1 + L2 * cos(th2));
-}
 ```
 
 ---
@@ -52,7 +46,7 @@ Um mesmo projeto reconstruído três vezes, cada vez com uma stack diferente:
 |:--|:--|:--|
 | [**V2**](https://github.com/Bruno0103/CarrinhoKamikaseV2) | ESP8266 | Site (HTML) |
 | [**V3**](https://github.com/Bruno0103/CarrinhoKamikaseV3) | ESP32 | App Android (Kotlin) |
-| [**V4**](https://github.com/Bruno0103/CarrinhoKamikaseV4) | — | TypeScript |
+| [**V4**](https://github.com/Bruno0103/CarrinhoKamikaseV4) | ESP32 | React Native (TypeScript) |
 
 *Aprendizado: iterar em cima do que já funciona.*
 
